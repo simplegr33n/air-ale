@@ -272,5 +272,7 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  config.omniauth :facebook, '1817914048483991', 'cf49f98df56b399cc7524299b17c2892', scope: 'email', info_fields: 'email,name'
+
+  # see config/application.yml
+  config.omniauth :facebook, ENV['facebook_app_id'], ENV['facebook_app_key'], scope: 'email', info_fields: 'email,name'
 end
