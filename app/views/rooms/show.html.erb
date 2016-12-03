@@ -179,7 +179,17 @@
 			<div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-heading preview">
-						<%= image_tag room.photos[0].image.url(:medium) %>
+						
+						<% if room.photos[0] %>
+			 				<%= image_tag room.photos[0].image.url(:medium) %>
+
+			 			<% else %>
+
+			 				<%= image_tag ("http://placehold.it/500x500") %>
+
+
+			 			<% end %>
+
 					</div>
 					<div class="panel-body">
 						<%= link_to room.listing_name, room %><br>
