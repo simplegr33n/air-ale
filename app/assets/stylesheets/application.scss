@@ -243,3 +243,13 @@ input[type="checkbox"]:checked:before {
 	padding: 10px;
 	margin-bottom: 10px;
 }
+
+.conversation {
+	color: #7F7F7F;
+	padding: 10px;
+
+}
+
+.conversation:hover, .converstion:focus {
+	background-color: #F4F4F5;
+}
