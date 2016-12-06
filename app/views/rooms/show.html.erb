@@ -4,7 +4,7 @@
 		<!-- Image -->
 		<div class="row">
 			<div class="col-md-12">
-				<%= image_tag @photos[0].image.url(), class: 'image-responsive' if @photos.length > 0 %>
+				<%= image_tag @room.show_first_photo(:medium), class: 'image-responsive' %>
 			</div>
 		</div>
 
@@ -181,15 +181,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading preview">
 						
-						<% if room.photos[0] %>
-			 				<%= image_tag room.photos[0].image.url(:medium) %>
-
-			 			<% else %>
-
-			 				<%= image_tag ("http://placehold.it/500x500") %>
-
-
-			 			<% end %>
+						<%= image_tag room.show_first_photo(:medium) %>
 
 					</div>
 					<div class="panel-body">

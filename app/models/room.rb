@@ -16,4 +16,11 @@ class Room < ApplicationRecord
   validates :address, presence: true
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
+  def show_first_photo(size)
+    if self.photos.length == 0
+      'http://cdnassets.hw.net/dims4/GG/c900fb2/2147483647/resize/876x%3E/quality/90/?url=http%3A%2F%2Fcdnassets.hw.net%2Fd9%2F06%2Feccce1b84b3fa086cb40137aecf1%2F2016-04-20-the-met-psychobarn-1.jpg'
+    else
+      self.photos[0].image.url(size)
+    end
+  end
 end
