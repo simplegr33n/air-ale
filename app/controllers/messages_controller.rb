@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   before_action :set_conversation
 
   def index
-    if current_user == @conversation.sender || current_user == @conversation_recipient
+    if current_user == @conversation.sender || current_user == @conversation.recipient
       @other = current_user == @conversation.sender ? @conversation.recipient : @conversation.sender
       @messages = @conversation.messages.order("created_at DESC")
     else
@@ -16,7 +16,9 @@ class MessagesController < ApplicationController
   	@messages = @conversation.messages.order("created_at DESC")
 
   	if @message.save
-      redirect_to conversation_messages_path(@conversation)
+      respond_to do |format|
+        format.js
+      end
     end
 
   end
