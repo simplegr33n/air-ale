@@ -28,32 +28,37 @@
 
 <div class="row">
 	<div class="col-md-4 col-sm-12">
-		<div class="discovery-card" style="background-image: url('assets/Vancouver.jpg')">
-			<div class="va-container">
-				<div class="va-middle text-center">
-					<h2><strong>Vancouver</strong></h2>
+		<a href="/search?utf8=%E2%9C%93&search=vancouver">
+			<div class="discovery-card" style="background-image: url('assets/Vancouver.jpg')">
+				<div class="va-container">
+					<div class="va-middle text-center">
+						<h2><strong>Vancouver</strong></h2>
+					</div>
 				</div>
 			</div>
-			
-		</div>
+		</a>
 	</div>
 	<div class="col-md-4 col-sm-6">
-		<div class="discovery-card" style="background-image: url('/assets/Denver.jpg')">
-			<div class="va-container">
-				<div class="va-middle text-center">
-					<h2><strong>Denver</strong></h2>
+		<a href="/search?utf8=%E2%9C%93&search=denver">
+			<div class="discovery-card" style="background-image: url('/assets/Denver.jpg')">
+				<div class="va-container">
+					<div class="va-middle text-center">
+						<h2><strong>Denver</strong></h2>
+					</div>
 				</div>
 			</div>
-		</div>
+		</a>
 	</div>
 	<div class="col-md-4 col-sm-6">
-		<div class="discovery-card" style="background-image: url('/assets/Amsterdam.jpg')">
-			<div class="va-container">
-				<div class="va-middle text-center">
-					<h2><strong>Amsterdam</strong></h2>
+		<a href="/search?utf8=%E2%9C%93&search=amsterdam">
+			<div class="discovery-card" style="background-image: url('/assets/Amsterdam.jpg')">
+				<div class="va-container">
+					<div class="va-middle text-center">
+						<h2><strong>Amsterdam</strong></h2>
+					</div>
 				</div>
 			</div>
-		</div>
+		</a>
 	</div>
 </div>
 
@@ -72,6 +77,7 @@
 					<%= image_tag room.show_first_photo(:medium) %>
 				</div>
 				<div class="panel-body">
+					<%= image_tag avatar_url(room.user), class: "img-circle avatar-small" %>&nbsp;
 					<%= link_to room.listing_name, room %>
 				</div>
 			</div>
