@@ -15,7 +15,9 @@
 				<% @rooms.each do |room| %>
 
 					<% room.reservations.each do |reservation| %>
-					    <div class="row">
+
+						<% if reservation.status %>
+					    	<div class="row">
 					    	<div class="col-md-2">
 					    		<%= reservation.start_date.strftime('%v') %>
 					    	</div>
@@ -32,8 +34,10 @@
 					    	<div class="col-md-2 right">
 					    		<h4>$<%= reservation.total %></h4>
 					    	</div>
-					    </div>
-					    <hr>
+					    	</div>
+					    	<hr>
+					    <% end %>
+					
 					<% end %>
 
 				<% end %>
